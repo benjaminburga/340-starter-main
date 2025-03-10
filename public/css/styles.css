@@ -1,6 +1,182 @@
-/******* Change Box Model ***************/
+/******* Box Model Fix ***************/
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+* {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+header a {
+    text-decoration: none;
+    color: black;
+}
+.siteName {
+    font-size: 25px;
+}
+nav {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-weight: bold;
+}
+nav ul li {
+    padding: 5px 10px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100vw;
+    position: relative;
+    padding: 4rem;
+}
+.hero img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+.hero-text {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.hero-text img {
+    width: 30%;
+    height: auto;
+    margin: 0 10px;
+}
+
+.hero-text-content{
+  color: royalblue;
+  background-color: rgba(78, 106, 207, 0.2); 
+  backdrop-filter: blur(10px);     
+  padding: 2rem;
+  margin: 1rem;
+  backdrop-filter: blur(5px);
+}
+h2 {
+    color: rgb(12, 12, 12);
+    width: 30vw;
+}
+
+.upgrades {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    padding: 20px;
+}
+.upgrades-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 50%;
+}
+.image-grid img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background-color: black;
+    padding: 2rem;
+}
+.upgrades-reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+figure {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+figcaption {
+    font-size: 0.9em;
+    color: #555;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/******* Responsive Design ***************/
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+    }
+    .hero img {
+        width: 80%;
+    }
+    .hero-text {
+        position: static;
+        transform: none;
+        font-size: 20px;
+        text-align: center;
+        padding: 2rem;
+    }
+    .hero-text img{
+        width: 60%;
+        padding: 1rem;
+    }
+    .hero-text-content{
+       color: royalblue;
+       background-color: rgba(78, 106, 207, 0.2); 
+       backdrop-filter: blur(10px);  
+       padding: 2rem;
+       margin: 1rem;
+       backdrop-filter: blur(5px);
+    }
+    h2 {
+        width: 80%;
+        text-align: center;
+    }
+    .upgrades {
+        grid-template-columns: 1fr;
+    }
+    .image-grid {
+        grid-template-columns: 1fr; 
+        width: 50%;
+      text-align: center;
+      }
+    .image-grid img {
+        width: 100%;
+        padding: 1rem;
+    }
 }
